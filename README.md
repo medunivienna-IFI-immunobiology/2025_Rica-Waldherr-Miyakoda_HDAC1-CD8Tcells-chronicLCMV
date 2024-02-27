@@ -1,6 +1,6 @@
 # Publication: "HDAC1 controls the generation and maintenance of effector-like CD8+ T cells during chronic viral infection"
 This README gives an overview of all R scripts used for analysis and visualization of scRNA-Seq and ATAC-Seq data in the study (DOI: XXX). They are available from the respective subfolders in this repository. The raw and processed data used as input will be available in the GEO database. Additionally, relevant metadata generated within the study can be found in the corresponding subfolder.
-For any questions or comments on the provided scripts and metadata please use the Discussion panel.
+For any questions or comments on the provided scripts and metadata please use the Discussions panel.
 
 ## scRNA-Seq Analysis
 Raw sequencing output was processed to count-feature-barcode matrices as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available. They are split in logically connected units to make versatile usage as easy as possible.
