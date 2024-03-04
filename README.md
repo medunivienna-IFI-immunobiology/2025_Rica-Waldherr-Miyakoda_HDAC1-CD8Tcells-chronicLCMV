@@ -8,9 +8,8 @@ For any questions or comments on the provided scripts and metadata please use th
 ## scRNA-Seq Analysis
 <p align="justify">
 Raw sequencing output was processed to count-feature-barcode matrices as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available. They are split in logically connected units to make versatile usage as easy as possible.
-</p>
 
-Large parts of the scripts are based on the tutorials provided by the Satija lab and the tutorial from HBC training:
+Large parts of the scripts are based on the tutorials provided by the Satija lab and the tutorial from HBC training: </p>
 * https://satijalab.org/seurat/articles/pbmc3k_tutorial.html
 * https://hbctraining.github.io/scRNA-seq_online/schedule/links-to-lessons.html
 
