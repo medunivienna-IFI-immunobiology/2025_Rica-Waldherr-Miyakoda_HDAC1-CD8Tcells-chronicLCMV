@@ -16,12 +16,28 @@ Large parts of the scripts are based on the tutorials provided by the Satija lab
 #### 01_scRNAseq_QC_cells.R
 <p align="justify">
 R script to run the cell-based quality control of scRNA-Seq data using the Seurat package. As input the path to the directory containing Cell Ranger output (raw count matrix with corresponding feature and barcode lists) has to be specified. The script will read in the data, convert it to a Seurat object, demuliplex and assign the HTO identities, remove doublets and negatives, remove unwanted cell types, add sample identifiers, rename some metadata columns, and visualize the QC metrics of the raw singlet data. Finally, the updated Seurat object will be saved.
-</p>
+
+Output files: </p>
+* DemuxRidgePlot.pdf
+* DemuxClassificationGlobalPlot.pdf
+* DemuxHeatmapPlot.pdf
+* TableCellTypesPredictedRaw.csv
+* RawViolinMetadataQC.pdf
+* RawNCellsReps.pdf
+* RawQCmetrics.pdf
+* RawQC_UMIGenesMitoCorr.pdf
+* cd8t_demux_s.rds
 
 #### 02_scRNAseq_QC_genes.R
 <p align="justify">
 R script to run the gene-based quality control of scRNA-Seq data using the Seurat package. As input the Seurat object resulting from script 01_scRNAseq_QC_cells.R is required. The data will be filtered by the number of detected UMIs, genes, complexity and % of mitochondrial genes. The same QC metrics as for the raw data will be visualized for the filtered data. The filtered Seurat object will be saved.
-</p>
+
+Output files: </p>
+* FiltViolinMetadataQC.pdf
+* FiltNCellsReps.pdf
+* FiltQCmetrics.pdf
+* FiltQC_UMIGenesMitoCorr.pdf
+* filtered_cd8t.rds
 
 #### 03_scRNAseq_QC_regression_integration.R
 <p align="justify">
