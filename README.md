@@ -42,7 +42,13 @@ Output files: </p>
 #### 03_scRNAseq_QC_regression_integration.R
 <p align="justify">
 R script to regress out unwanted variation from cell cycle phases and to integrate the replicates. PCA and UMAP before and after regression will be visualized. As input the Seurat object resulting from script 02_scRNAseq_QC_genes.R is required. The final Seurat object will again be saved.
-</p>
+
+Output files: </p>
+* CellCyclePCAbeforeReg.pdf
+* ReplicatesUMAPbeforeInt.pdf
+* CellCyclePCAafterReg.pdf
+* ReplicatesUMAPafterInt.pdf
+* cd8t_integrated.rds
 
 #### 04_scRNAseq_Clustering.R
 <p align="justify">
