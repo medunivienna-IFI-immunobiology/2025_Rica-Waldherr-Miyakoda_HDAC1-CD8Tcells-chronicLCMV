@@ -60,10 +60,20 @@ Output files: </p>
 
 #### 05_scRNAseq_Clustering_characterization.R
 <p align="justify">
-R script to ...
+R script to characterize clusters. This is done by calulating module scores from published signature gene sets and finding marker gene sets. Annotation is done manually guided by those results. Requires the Seurat object generated in the script 04_scRNAseq_Clustering.R and a CSV file containing published gene signatures (Daniel2021_TcellSignatures.csv) as input. A Seurat object containing the annotated cluster names as metadata will be saved. Additionally, several plots characterizing the clusters in regard to their marker genes and frequencies are output.
 
 Output files: </p>
-* ...
+* FeaturePlot_ClusterComparedtoDanieletal_Res.0.6.pdf
+* DotPlot_ClusterComparedtoDanieletal_Res.0.6.pdf
+* Allmarkers_default_Res.0.6.csv
+* UMAP_ALL_Res0.6.pdf
+* UMAP_ALLsplit_Res0.6.pdf
+* cd8t_cluster_ownIdentsRes0.6.rds
+* CellNumberBarplot_Res0.6.pdf
+* FrequencyBarplot_Res0.6.pdf
+* Alluniquemarkers_Res.0.6.csv
+* Heatmap_Alluniquemarkers_Res.0.6.pdf
+* FeaturePlots_GenesofInterest.pdf
 
 </p>
 
