@@ -58,7 +58,7 @@ for (i in clusterNames) {
 colnames(cd8t_cluster@meta.data)[c(37:46)] <- clusterNames
 
 # print feature plot showing average expression of published cluster signatures in data
-pdf("FeaturePlot_ClusterComparedtoDanieletal_Res.0.6.pdf", height = 8, width = 10)
+pdf("../FeaturePlot_ClusterComparedtoDanieletal_Res.0.6.pdf", height = 8, width = 10)
 FeaturePlot(cd8t_cluster,
             features = clusterNames, min.cutoff = "q1", max.cutoff = "q99",
             cols = rev(brewer.pal(n = 7, name = "RdBu")),
@@ -68,7 +68,7 @@ dev.off()
 # print dotplot showing average expression of published cluster signatures in data;
 # order of identities was changed later for publication according to found similarities with published gene sets
 # and identified marker genes, but here are still ordered and named as in original clustering 
-pdf("DotPlot_ClusterComparedtoDanieletal_Res.0.6.pdf", height = 8, width = 10)
+pdf("../DotPlot_ClusterComparedtoDanieletal_Res.0.6.pdf", height = 8, width = 10)
 DotPlot(cd8t_cluster, features = clusterNames, cols = "RdBu", col.min = -1.7, col.max = 1.7) + 
   RotatedAxis() + xlab("Signatures")
 dev.off()
