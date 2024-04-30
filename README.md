@@ -53,6 +53,10 @@ Output files: </p>
 #### 04_scRNAseq_Clustering.R
 <p align="justify">
 R script to determine the number of principal components to use and to perform the clustering with different resolutions. Requires the Seurat object generated in the script 03_scRNAseq_QC_regression_integration.R as input. All clusterings will be saved within the resulting Seurat object.
+
+Output files: </p>
+* cd8t_cluster.rds
+
 </p>
 
 ...in progress...
