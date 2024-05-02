@@ -75,9 +75,13 @@ Output files: </p>
 * Heatmap_Alluniquemarkers_Res.0.6.pdf
 * FeaturePlots_GenesofInterest.pdf
 
-</p>
+#### 06_scRNAseq_Clustering_analysis.R
+<p align="justify">
+R script to run differential expression analysis and GO term enrichment analysis. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. Differentially expressed genes between KO and WT in early-non-Texprog are output as CSV as well as Volcano Plot.
 
-...in progress...
+Output files: </p>
+* nonTexprogDEGs.csv
+* VolcanoPlot_KOvsWT_earlynonTexprog_Res0.6.pdf
 
 ## ATAC-Seq Analysis
 <p align="justify">
