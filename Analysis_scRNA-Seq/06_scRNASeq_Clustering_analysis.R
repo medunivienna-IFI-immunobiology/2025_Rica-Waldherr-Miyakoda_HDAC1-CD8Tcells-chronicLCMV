@@ -7,6 +7,10 @@
 library(SeuratObject)
 library(Seurat)
 library(EnhancedVolcano)
+library(dplyr)
+library(clusterProfiler)
+library(org.Mm.eg.db)
+library(AnnotationHub)
 
 #### load Seurat object ####
 cd8t_cluster <- readRDS("cd8t_cluster_ownIdentsRes0.6.rds")
@@ -55,12 +59,6 @@ print(myplot)
 dev.off()
 
 #### run GO term (BP) enrichment analysis on all clusters ####
-
-library("dplyr")
-library("clusterProfiler")
-library("org.Mm.eg.db")
-library("AnnotationHub")
-library("readr")
 
 #load marker genes for all clusters resolution 0.6
 allMarkers <- read.csv2("../Allmarkers_default_Res.0.6.csv")
