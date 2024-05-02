@@ -77,11 +77,14 @@ Output files: </p>
 
 #### 06_scRNAseq_Clustering_analysis.R
 <p align="justify">
-R script to run differential expression analysis and GO term enrichment analysis. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. Differentially expressed genes between KO and WT in early-non-Texprog are output as CSV as well as Volcano Plot.
+R script to run differential expression analysis and GO term enrichment analysis. Requires the Seurat object and marker gene list generated in the script 05_scRNAseq_Clustering_characterization.R as input. Differentially expressed genes between KO and WT in early-non-Texprog are output as CSV as well as Volcano Plot. Enriched GO terms are output as CSV file and reduced using the web-based tool Revigo (http://revigo.irb.hr/). Those terms are read back in (file: Revigo_BP_Table_ALLclustersRes0.6_AllSignMarkers_Top10.tsv) and plotted as dotplot for all clusters.
 
 Output files: </p>
 * nonTexprogDEGs.csv
 * VolcanoPlot_KOvsWT_earlynonTexprog_Res0.6.pdf
+* GOBPenriched_DotplotData_ALLclustersRes0.6_AllSignMarkers.csv
+* GOBPenriched_DotPlotData_ALLclustersRes0.6_AllSignMarkers_Top10forRevigo.txt
+* GOBPenriched_DotPlot_ALLclustersRes0.6.pdf
 
 ## ATAC-Seq Analysis
 <p align="justify">
