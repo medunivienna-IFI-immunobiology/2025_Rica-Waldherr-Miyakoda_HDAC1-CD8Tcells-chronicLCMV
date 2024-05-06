@@ -89,6 +89,25 @@ Output files: </p>
 ## ATAC-Seq Analysis
 <p align="justify">
 Raw sequencing output was processed to a consensus sequence count matrix as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available.
-</p>
+
+#### 01_ATACseq_QC.R
+<p align="justify">
+R script to run quality control on consensus region count matrix and normalize counts. Requires count matrix of all consensus regions, consensus region annotations and sample annotations as input. Outputs different QC plots, the count matrix including normalized counts and the default DESeq2 object as RDS.
+
+Output files: </p>
+* PeakMeansSDs_all.pdf
+* PeakMeansSDs_woout.pdf
+* BoxplotCountsBeforeNorm.pdf
+* BoxplotCountsAfterNorm.pdf
+* dfATACcountswithinfosandnormalization.csv
+* PCAgroup.pdf
+* ATACseq_dds.rds
+
+#### 02_ATACseq_DifferentiallyAccessibleRegions.R
+<p align="justify">
+R script to ...
+
+Output files: </p>
+* ...
 
 ...in progress...
