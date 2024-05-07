@@ -105,9 +105,31 @@ Output files: </p>
 
 #### 02_ATACseq_DifferentiallyAccessibleRegions.R
 <p align="justify">
-R script to ...
+R script to find differentially accessible regions and annotate their position. Requires default DESeq2 object generated in script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs count matrix with calculated significances added, tables of significant DARs in both groups and annotation plots of both groups.
 
 Output files: </p>
-* ...
+* dfATACcountswithsignificances.csv
+* dfATAC_Texprog_significantDARs.csv
+* dfATAC_nonTexprog_significantDARs.csv
+* Texprog_signDARsKOvsWT_annotation.pdf
+* nonTexprog_signDARsKOvsWT_annotation.pdf
+
+#### 03_ATACseq_GeneSetEnrichmentAnalysis.R
+<p align="justify">
+R script to analyse enrichment of significant DARs in GO terms of Biological Processes (BP) and compared to effector like gene sets from the ImmuneSigDb. Requires CSV files with significant DARs and count matrix from script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs tables and plots of enriched GO terms (BP) as well as enriched ImmuneSigDb signatures.
+
+Output files: </p>
+* GOBPenriched_allTerms.csv
+* GOBPenriched_allTerms_Top10forRevigo.txt
+* GOBPenriched_all_Revigo.tsv
+* DotPlot_GOBPenriched_signDARs.pdf
+* GSEA_EnrichmentPlot_ImmuneSigDb_CD8TcellEffectorExhausted_DARs.pdf
+* GSEA_EnrichmentPlot_ExhaustedSignature_DARs.pdf
+* GSEA_EnrichmentPlot_EffectorSignature_DARs.pdf
+* GSEA_EnrichmentPlot_Table.csv
+
+## Integration of scRNA-Seq and ATAC-Seq Analysis
+<p align="justify">
+To ...
 
 ...in progress...
