@@ -15,7 +15,7 @@ countsdf <- read.table("all_counts.csv", header = T, sep = ",")
 colnames(countsdf)[1] <- "consensus"
 consdf <- read.table("consensus_regions_annotation.csv", header = T, sep = ",",
                      fill = T, quote = "\"")
-impconsdf <- consdf[,c(1:4,11:13,21)]
+impconsdf <- consdf[,c(1:4,11:13,21)] # use unique id (peak/consensus id), chromosome, start, end, gene name and consensus characterization/annotation (here from gencode and homer)
 colnames(impconsdf)[1] <- "consensus"
 si <- read.table("all_annotation.csv", header = T, sep = ",")
 si <- si[,c(1,3,4)]
