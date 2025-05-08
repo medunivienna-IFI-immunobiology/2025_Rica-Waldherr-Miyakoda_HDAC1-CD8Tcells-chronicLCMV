@@ -135,5 +135,5 @@ Output files: </p>
 ## CUT&RUN Analysis
 <p align="justify">
 Raw sequencing output was processed to coverage and peak files as described in the methods section of the publication. Here only the subsequently used scripts for quality control and analysis are described and made available.
-... in progres ...
+... in progress ...
 
