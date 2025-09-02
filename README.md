@@ -88,7 +88,7 @@ Output files: </p>
 
 #### 07_scRNAseq_Trajectory.R
 <p align="justify">
-R script to run trajectory inference analysis with Monocle3 on the data stored in the Seurat object. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. The trajectory is plot on top of the UMAP of the clusters colored by pseudotime.
+R script to run trajectory inference analysis with Monocle3 on the data stored in the Seurat object. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. The trajectory is plotted on top of the UMAP of the clusters colored by pseudotime.
 
 Output file: </p>
 * Plot_Trajectory_Monocle3_Pseudotime.pdf
