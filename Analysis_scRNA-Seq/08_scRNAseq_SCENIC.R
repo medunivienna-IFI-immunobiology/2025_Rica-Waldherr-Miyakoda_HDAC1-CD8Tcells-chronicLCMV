@@ -93,6 +93,9 @@ colVars <- readRDS("int/colVars.Rds")
 
 #### initialize SCENIC settings ####
 library(SCENIC)
+library(data.table)
+library(AUCell)
+
 org <- "mgi" # specify organism
 dbDir <- "../cisTarget_databases" # RcisTarget databases location
 myDatasetTitle <- "SCENIC analysis CD8+ Tcells" # choose a name for your analysis
@@ -156,31 +159,7 @@ saveRDS(scenicOptions, file="int/scenicOptions.Rds")
 # use script 08a to run on the server, it saves scenicOptions as Rds file afterwards
 
 #### Build and score the GRN ####
-# run this part with the script 08b on a server with enough RAM
-library(SCENIC)
-library(data.table)
-library(AUCell)
-
-# load scenicOptions_afterGenie.Rds
-scenicOptions <- readRDS("int/scenicOptions_afterGenie.Rds")
-scenicOptions@settings$verbose <- TRUE
-scenicOptions@settings$nCores <- 10
-scenicOptions@settings$seed <- 123
-
-# reload the expression matrix and get a log transformed one too
-exprMat <- as.matrix.data.frame(read.table("int/exprMat.tab", header = T), rownames.force = T)
-exprMat_log <- log2(exprMat + 1) # Optional: log expression (for TF expression plot, it does not affect any other calculation)
-
-# reload annotations
-motifAnnotations_mgi <- read.table("int/motifAnno.tab", header = T)
-motifAnnotations_mgi <- as.data.table(motifAnnotations_mgi)
-
-# run SCENIC in three steps
-scenicOptions <- runSCENIC_1_coexNetwork2modules(scenicOptions)
-scenicOptions <- runSCENIC_2_createRegulons(scenicOptions) # needs motifAnnotations_mgi, requires a lot of RAM -> run on server
-scenicOptions <- runSCENIC_3_scoreCells(scenicOptions, exprMat_log)
-
-saveRDS(scenicOptions, file="int/scenicOptions_afterRunSCENIC.Rds") # To save status
+# use script 08b to run on a server with enough RAM, it saves scenicOptions as Rds file afterwards
 
 #### Visualize regulators ####
 cellInfo <- readRDS("int/cellInfo.Rds")
