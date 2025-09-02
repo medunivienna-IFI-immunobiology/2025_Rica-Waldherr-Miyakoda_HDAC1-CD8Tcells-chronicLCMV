@@ -32,7 +32,7 @@ saveRDS(monocle_object, "./A_10_scRNAseq_Revision_Trajectory/Monocle3object.Rds"
 
 library(wesanderson)
 
-pdf("./Plot_Trajectory_Monocle3_Pseudotime.pdf", width = 10, height = 8)
+pdf("../Plot_Trajectory_Monocle3_Pseudotime.pdf", width = 10, height = 8)
 plot_cells(monocle_object,
            color_cells_by = "pseudotime",
            cell_size = 1.5,
