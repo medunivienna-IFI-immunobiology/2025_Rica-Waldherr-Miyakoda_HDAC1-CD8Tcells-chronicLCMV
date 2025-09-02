@@ -86,6 +86,13 @@ Output files: </p>
 * GOBPenriched_DotPlotData_ALLclustersRes0.6_AllSignMarkers_Top10forRevigo.txt
 * GOBPenriched_DotPlot_ALLclustersRes0.6.pdf
 
+#### 07_scRNAseq_Trajectory.R
+<p align="justify">
+R script to run trajectory inference with Monocle3. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. The trajectory is plot on top of the UMAP of the clusters colored by pseudotime.
+
+Output file: </p>
+* Plot_Trajectory_Monocle3_Pseudotime.pdf
+
 ## ATAC-Seq Analysis
 <p align="justify">
 Raw sequencing output was processed to a consensus sequence count matrix as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available.
