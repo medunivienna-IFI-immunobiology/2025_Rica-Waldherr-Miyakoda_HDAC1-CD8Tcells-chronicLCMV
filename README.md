@@ -93,6 +93,34 @@ R script to run trajectory inference analysis with Monocle3 on the data stored i
 Output file: </p>
 * Plot_Trajectory_Monocle3_Pseudotime.pdf
 
+#### 08_scRNAseq_Trajectory.R
+<p align="justify">
+R script to run regulatory network analysis with SCENIC on the data stored in the Seurat object. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. The results are plotted as dotplots showing regulon activities. The scripts 08a_scRNAseq_SCENIC.R and 08b_scRNAseq_SCENIC.R need to be run on a server with enough RAM and are therefore saved separately. The resulting file of 08b_scRNAseq_SCENIC.R is used again as input here to then generate the visualizations.
+
+Output files: </p>
+* exprMat.tab
+* cellInfo.tab
+* colVars.tab
+* motifAnno.tab
+* scenicOptions.tab
+* exprMat_filtered.tab
+* DotPlot_RegulonActivity_TexProg_WT_vs_KO.pdf
+* DotPlot_RegulonActivity_nonTexProg_WT_vs_KO.pdf
+
+#### 08a_scRNAseq_Trajectory.R
+<p align="justify">
+R script to run GENIE3 as first step of SCENIC to infer potential TF targets based on the expression data. Requires motifAnno.tab, scenicOptions.Rds and exprMat_filtered.tab generated in the script 08_scRNAseq_SCENIC.R as input. Creates several output files, which are not uploaded or described here due to size restrictions. Only the one file, which is used for further analysis is listed here.
+
+Output files: </p>
+* scenicOptions_afterGenie.Rds
+
+#### 08b_scRNAseq_SCENIC.R
+<p align="justify">
+R script to actually run SCENIC in three steps. Requires exprMat.tab and motifAnno.tab generated in the script 08_scRNAseq_SCENIC.R and scenicOptions_afterGenie.Rds generated in the script 08a_scRNAseq_SCENIC.R as input. Creates several output files, which are not uploaded or described here due to size restrictions. Only the one file, which is used for further analysis is listed here.
+
+Output files: </p>
+* scenicOptions_afterRunSCENIC_3.Rds
+
 ## ATAC-Seq Analysis
 <p align="justify">
 Raw sequencing output was processed to a consensus sequence count matrix as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available.
