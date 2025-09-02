@@ -93,7 +93,7 @@ R script to run trajectory inference analysis with Monocle3 on the data stored i
 Output file: </p>
 * Plot_Trajectory_Monocle3_Pseudotime.pdf
 
-#### 08_scRNAseq_Trajectory.R
+#### 08_scRNAseq_SCENIC.R
 <p align="justify">
 R script to run regulatory network analysis with SCENIC on the data stored in the Seurat object. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as input. The results are plotted as dotplots showing regulon activities. The scripts 08a_scRNAseq_SCENIC.R and 08b_scRNAseq_SCENIC.R need to be run on a server with enough RAM and are therefore saved separately. The resulting file of 08b_scRNAseq_SCENIC.R is used again as input here to then generate the visualizations.
 
@@ -107,7 +107,7 @@ Output files: </p>
 * DotPlot_RegulonActivity_TexProg_WT_vs_KO.pdf
 * DotPlot_RegulonActivity_nonTexProg_WT_vs_KO.pdf
 
-#### 08a_scRNAseq_Trajectory.R
+#### 08a_scRNAseq_SCENIC.R
 <p align="justify">
 R script to run GENIE3 as first step of SCENIC to infer potential TF targets based on the expression data. Requires motifAnno.tab, scenicOptions.Rds and exprMat_filtered.tab generated in the script 08_scRNAseq_SCENIC.R as input. Creates several output files, which are not uploaded or described here due to size restrictions. Only the one file, which is used for further analysis is listed here.
 
