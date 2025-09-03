@@ -172,7 +172,17 @@ Output files: </p>
 
 ## Integration of scRNA-Seq and ATAC-Seq Analysis
 <p align="justify">
-... in progress ...
+R script to integrate the ATAC-Seq data with the scRNA-Seq data by calculating module scores of the significant DARs of interest and projecting them on the UMAPs. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as well as the files dfATAC_Texprog_significantDARs.csv and dfATAC_nonTexprog_significantDARs.csv generated in the script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs the expression of the calculated module scores of the significant DARs in each cell on the clustering (UMAP) of the scRNA-Seq analysis. Also outputs violin plots showing the module score distributions in each cluster and a table with corresponding statistics results.
+
+Output files: </p>
+* TprogDARsOnCluster.pdf
+* TtermDARsOnCluster.pdf
+* TprogDARsModuleScores_scRNACluster.pdf
+* TtermDARsModuleScores_scRNACluster.pdf
+* WTTprogDARs_ModuleScores_AnovaTukeyResults.txt
+* KOTprogDARs_ModuleScores_AnovaTukeyResults.txt
+* WTTtermDARs_ModuleScores_AnovaTukeyResults.txt
+* KOTtermDARs_ModuleScores_AnovaTukeyResults.txt
 
 ## CUT&RUN Analysis
 <p align="justify">
