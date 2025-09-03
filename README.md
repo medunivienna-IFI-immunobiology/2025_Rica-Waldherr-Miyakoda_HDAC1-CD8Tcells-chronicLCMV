@@ -9,7 +9,7 @@ For any questions or comments on the provided scripts and metadata please use th
 - [scRNA-Seq Analysis](#scrna-seq-analysis)
 - [ATAC-Seq Analysis](#atac-seq-analysis)
 - [Integration of scRNA-Seq and ATAC-Seq Analysis](#integration-of-scrna-seq-and-atac-seq-analysis)
-- [CUTRUN Analysis](#cut&run-analysis)
+- [CUT&RUN Analysis](#cutrun-analysis)
 
 ## scRNA-Seq Analysis
 <p align="justify">
