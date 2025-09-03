@@ -5,6 +5,12 @@ This README gives an overview of all R scripts used for analysis and visualizati
 For any questions or comments on the provided scripts and metadata please use the Discussions panel.
 </p>
 
+## Contents
+- [scRNA-Seq Analysis](#scrna-seq-analysis)
+- [ATAC-Seq Analysis](#atac-seq-analysis)
+- [Integration of scRNA-Seq and ATAC-Seq Analysis](#integration-of-scrna-seq-and-atac-seq-analysis)
+- [CUT&RUN Analysis](#cut&run-analysis)
+
 ## scRNA-Seq Analysis
 <p align="justify">
 Raw sequencing output was processed to count-feature-barcode matrices as described in the methods section of the publication. Here only the subsequently used R scripts are described and made available. They are split in logically connected units to make versatile usage as easy as possible.
