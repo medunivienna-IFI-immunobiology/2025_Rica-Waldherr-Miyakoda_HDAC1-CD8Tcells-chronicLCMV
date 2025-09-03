@@ -146,7 +146,7 @@ Output files: </p>
 
 #### 02_ATACseq_DifferentiallyAccessibleRegions.R
 <p align="justify">
-R script to find differentially accessible regions and annotate their position. Requires default DESeq2 object generated in script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs count matrix with calculated significances added, tables of significant DARs in both groups and annotation plots of both groups.
+R script to find differentially accessible regions and annotate their position. Requires default DESeq2 object generated in script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs count matrix with calculated significances added, tables of significant DARs in both groups, annotation plots of both groups, and number of significant DARs in all groups as barplot.
 
 Output files: </p>
 * dfATACcountswithsignificances.csv
@@ -154,6 +154,7 @@ Output files: </p>
 * dfATAC_nonTexprog_significantDARs.csv
 * Texprog_signDARsKOvsWT_annotation.pdf
 * nonTexprog_signDARsKOvsWT_annotation.pdf
+* DARs_numberDARsGenotypes.pdf
 
 #### 03_ATACseq_GeneSetEnrichmentAnalysis.R
 <p align="justify">
