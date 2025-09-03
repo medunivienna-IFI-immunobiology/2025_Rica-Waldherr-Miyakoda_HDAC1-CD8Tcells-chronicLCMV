@@ -7,6 +7,7 @@ library(ggplot2)
 library(pander)
 library(DESeq2)
 library(ashr)
+library(stringr)
 
 #### load dds object ###
 dds <- readRDS("../ATACseq_dds.rds")
@@ -84,7 +85,7 @@ Prognums$Freq <- as.numeric(Prognums$Freq)
 pdf("../Texprog_signDARsKOvsWT_annotation.pdf", width = 10, height = 6)
 ggplot(Prognums, aes(Var1, Freq, fill = group)) + 
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("#1F78B4", "#A6CEE3")) +
+  scale_fill_manual(values = c("mediumseagreen", "#1F78B4")) +
   xlab("") +
   ylab("# of DARs") +
   ggtitle("Texprog KO vs WT") + 
@@ -111,7 +112,7 @@ Termnums$Var1 <- factor(Termnums$Var1, levels =  c("intron", "Intergenic", "prom
 pdf("../nonTexprog_signDARsKOvsWT_annotation.pdf", width = 10, height = 6)
 ggplot(Termnums, aes(Var1, Freq, fill = group)) + 
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("mediumseagreen", "#B2DF8A")) +
+  scale_fill_manual(values = c("#B2DF8A", "#A6CEE3")) +
   xlab("") +
   ylab("# of DARs") +
   ggtitle("nonTexprog KO vs WT") + 
@@ -119,7 +120,39 @@ ggplot(Termnums, aes(Var1, Freq, fill = group)) +
   theme_bw()
 dev.off()
 
+#### plot number of DARs for all significant DAR groups ####
+# genotypes
+numDARsgenotype <- data.frame(id = character(4), number = numeric(4) , 
+                              group = character(4))
 
+numDARsgenotype$number[1] <- sum(subset(Prognums, group == "open in WT")$Freq)
+numDARsgenotype$id[1] <- "Tprog KO vs WT"
+numDARsgenotype$group[1] <- "Tprog open in WT"
+
+numDARsgenotype$number[2] <- sum(subset(Prognums, group == "open in KO")$Freq)
+numDARsgenotype$id[2] <- "Tprog KO vs WT"
+numDARsgenotype$group[2] <- "Tprog open in KO"
+
+numDARsgenotype$number[3] <- sum(subset(Termnums, group == "open in WT")$Freq)
+numDARsgenotype$id[3] <- "Tterm KO vs WT"
+numDARsgenotype$group[3] <- "Tterm open in WT"
+
+numDARsgenotype$number[4] <- sum(subset(Termnums, group == "open in KO")$Freq)
+numDARsgenotype$id[4] <- "Tterm KO vs WT"
+numDARsgenotype$group[4] <- "Tterm open in KO"
+
+ggplot(numDARsgenotype, aes(id, number, fill = group)) + 
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("mediumseagreen", "#1F78B4", "#B2DF8A", "#A6CEE3")) +
+  xlab("") +
+  ylab("# of DARs") +
+  ggtitle("# of DARs in genotypes") + 
+  ylim(-(max(abs(numDARsgenotype$number))+5), 
+       (max(abs(numDARsgenotype$number))+5)) -> p5
+
+pdf("../DARs_numberDARsGenotypes.pdf", width = 6, height = 5)
+p5
+dev.off()
 
 
 
