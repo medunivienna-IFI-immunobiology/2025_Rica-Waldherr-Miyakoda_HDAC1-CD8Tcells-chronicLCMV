@@ -1,0 +1,73 @@
+[[1]]
+
+Call:
+lm(formula = WT ~ Res0.6Names, data = modulescore_df)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.067299 -0.012959 -0.000729  0.012445  0.087880 
+
+Coefficients:
+                                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.0284679  0.0004820  59.061  < 2e-16 ***
+Res0.6NamesProgenitor                  0.0053238  0.0006630   8.030 1.04e-15 ***
+Res0.6NamesProliferating               0.0082518  0.0010144   8.135 4.42e-16 ***
+Res0.6NamesExhausted                   0.0032518  0.0008150   3.990 6.64e-05 ***
+Res0.6NamesEarly-Effector-like        -0.0018910  0.0005907  -3.201  0.00137 ** 
+Res0.6NamesIntermediate-Effector-like  0.0094996  0.0005520  17.208  < 2e-16 ***
+Res0.6NamesCX3CR1+ Effector-like       0.0092442  0.0006417  14.405  < 2e-16 ***
+Res0.6NamesCytotoxic-like              0.0018484  0.0006364   2.905  0.00368 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01879 on 16385 degrees of freedom
+Multiple R-squared:  0.05592,	Adjusted R-squared:  0.05551 
+F-statistic: 138.6 on 7 and 16385 DF,  p-value: < 2.2e-16
+
+
+[[2]]
+ Res0.6Names                emmean       SE    df lower.CL upper.CL
+ Naive                      0.0285 0.000482 16385   0.0275   0.0294
+ Progenitor                 0.0338 0.000455 16385   0.0329   0.0347
+ Proliferating              0.0367 0.000893 16385   0.0350   0.0385
+ Exhausted                  0.0317 0.000657 16385   0.0304   0.0330
+ Early-Effector-like        0.0266 0.000341 16385   0.0259   0.0272
+ Intermediate-Effector-like 0.0380 0.000269 16385   0.0374   0.0385
+ CX3CR1+ Effector-like      0.0377 0.000424 16385   0.0369   0.0385
+ Cytotoxic-like             0.0303 0.000416 16385   0.0295   0.0311
+
+Confidence level used: 0.95 
+
+[[3]]
+ contrast                                                estimate       SE    df t.ratio p.value
+ Naive - Progenitor                                     -0.005324 0.000663 16385  -8.030  <.0001
+ Naive - Proliferating                                  -0.008252 0.001014 16385  -8.135  <.0001
+ Naive - Exhausted                                      -0.003252 0.000815 16385  -3.990  0.0017
+ Naive - (Early-Effector-like)                           0.001891 0.000591 16385   3.201  0.0298
+ Naive - (Intermediate-Effector-like)                   -0.009500 0.000552 16385 -17.208  <.0001
+ Naive - (CX3CR1+ Effector-like)                        -0.009244 0.000642 16385 -14.405  <.0001
+ Naive - (Cytotoxic-like)                               -0.001848 0.000636 16385  -2.905  0.0717
+ Progenitor - Proliferating                             -0.002928 0.001002 16385  -2.922  0.0682
+ Progenitor - Exhausted                                  0.002072 0.000799 16385   2.592  0.1589
+ Progenitor - (Early-Effector-like)                      0.007215 0.000569 16385  12.679  <.0001
+ Progenitor - (Intermediate-Effector-like)              -0.004176 0.000529 16385  -7.897  <.0001
+ Progenitor - (CX3CR1+ Effector-like)                   -0.003920 0.000622 16385  -6.304  <.0001
+ Progenitor - (Cytotoxic-like)                           0.003475 0.000616 16385   5.639  <.0001
+ Proliferating - Exhausted                               0.005000 0.001108 16385   4.511  0.0002
+ Proliferating - (Early-Effector-like)                   0.010143 0.000956 16385  10.614  <.0001
+ Proliferating - (Intermediate-Effector-like)           -0.001248 0.000932 16385  -1.339  0.8842
+ Proliferating - (CX3CR1+ Effector-like)                -0.000992 0.000988 16385  -1.004  0.9739
+ Proliferating - (Cytotoxic-like)                        0.006403 0.000985 16385   6.504  <.0001
+ Exhausted - (Early-Effector-like)                       0.005143 0.000741 16385   6.944  <.0001
+ Exhausted - (Intermediate-Effector-like)               -0.006248 0.000710 16385  -8.797  <.0001
+ Exhausted - (CX3CR1+ Effector-like)                    -0.005992 0.000782 16385  -7.663  <.0001
+ Exhausted - (Cytotoxic-like)                            0.001403 0.000778 16385   1.805  0.6168
+ (Early-Effector-like) - (Intermediate-Effector-like)   -0.011391 0.000435 16385 -26.203  <.0001
+ (Early-Effector-like) - (CX3CR1+ Effector-like)        -0.011135 0.000544 16385 -20.465  <.0001
+ (Early-Effector-like) - (Cytotoxic-like)               -0.003739 0.000538 16385  -6.953  <.0001
+ (Intermediate-Effector-like) - (CX3CR1+ Effector-like)  0.000255 0.000502 16385   0.509  0.9996
+ (Intermediate-Effector-like) - (Cytotoxic-like)         0.007651 0.000495 16385  15.455  <.0001
+ (CX3CR1+ Effector-like) - (Cytotoxic-like)              0.007396 0.000593 16385  12.463  <.0001
+
+P value adjustment: tukey method for comparing a family of 8 estimates 
+
