@@ -24,8 +24,8 @@ KOcons <- allcons[allcons$consensus %in% DARsTprogKO$consensus,]
 write.table(WTcons, "TprogWTopenCons.bed", col.names = F, row.names = F, sep = "\t", quote = F)
 write.table(KOcons, "TprogKOopenCons.bed", col.names = F, row.names = F, sep = "\t", quote = F)
 
-# read in consensus regions of interest Tterm
-DARsTterm <- read.delim("dfATAC_Tterm_significantDARs.csv", sep = ";")
+# read in consensus regions of interest Tterm (non Tprog)
+DARsTterm <- read.delim("dfATAC_nonTprog_significantDARs.csv", sep = ";")
 
 # split DARs in WT (neg log2(FC)) and KO (pos log2(FC))
 DARsTtermWT <- subset(DARsTterm, DARsTterm$log2FoldChange__group_KO_Tterm_vs_WT_Tterm < 0)
