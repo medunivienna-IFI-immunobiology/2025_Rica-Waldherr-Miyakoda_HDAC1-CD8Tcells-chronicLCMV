@@ -170,6 +170,16 @@ Output files: </p>
 * GSEA_EnrichmentPlot_EffectorSignature_DARs.pdf
 * GSEA_EnrichmentPlot_Table.csv
 
+#### 04_ATACseq_TFmotifs_GetConsensusBedFilesOfInterest.R
+<p align="justify">
+R script to prepare files containing consensus regions of interest for later usage with HOMER. Requires consensus.bed file with all detected consensus regions and CSV files with significant DARs from script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs separate BED files for celltype and genotype containing consensus regions detected as DARs in previous analyses.
+
+Output files: </p>
+* TprogWTopenCons.bed
+* TprogKOopenCons.bed
+* TtermWTopenCons.bed
+* TtermKOopenCons.bed
+
 ## Integration of scRNA-Seq and ATAC-Seq Analysis
 <p align="justify">
 R script to integrate the ATAC-Seq data with the scRNA-Seq data by calculating module scores of the significant DARs of interest and projecting them on the UMAPs. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as well as the files dfATAC_Texprog_significantDARs.csv and dfATAC_nonTexprog_significantDARs.csv generated in the script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs the expression of the calculated module scores of the significant DARs in each cell on the clustering (UMAP) of the scRNA-Seq analysis. Also outputs violin plots showing the module score distributions in each cluster and a table with corresponding statistics results.
