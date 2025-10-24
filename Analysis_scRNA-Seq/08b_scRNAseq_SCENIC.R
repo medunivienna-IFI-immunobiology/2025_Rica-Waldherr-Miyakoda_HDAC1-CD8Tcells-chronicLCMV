@@ -22,3 +22,5 @@ motifAnnotations_mgi <- read.table("int/motifAnno.tab", header = T)
 scenicOptions <- runSCENIC_1_coexNetwork2modules(scenicOptions)
 scenicOptions <- runSCENIC_2_createRegulons(scenicOptions) # needs motifAnnotations_mgi, reqires a lot of RAM -> run on server
 scenicOptions <- runSCENIC_3_scoreCells(scenicOptions, exprMat_log)
+
+saveRDS(scenicOptions, file="int/scenicOptions_afterRunSCENIC_3.Rds")
