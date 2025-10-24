@@ -1,6 +1,6 @@
 # title: subset consensus region bed files of ATAC-Seq data to only keep the ones of interest for TF motif analysis
 # author: Monika Waldherr
-# input: conensus_regions.bed file containing all called consensus peaks, CSV files containing names of consensus regions of interest
+# input: consensus_regions.bed file containing all called consensus peaks, CSV files containing names of consensus regions of interest
 
 #### load libraries ####
 library(ggplot2)
