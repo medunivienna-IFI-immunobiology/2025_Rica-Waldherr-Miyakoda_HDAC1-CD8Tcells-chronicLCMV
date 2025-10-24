@@ -180,6 +180,16 @@ Output files: </p>
 * TtermWTopenCons.bed
 * TtermKOopenCons.bed
 
+#### 05_ATACseq_TFmotifs_RunHomer.sh
+<p align="justify">
+Script contains commands to run from HOMER for finding enriched motifs in genomic regions of DARs. Requires consensus.bed of DARs from script 04_ATACseq_TFmotifs_GetConsensusBedFilesOfInterest.R as input. Outputs standard HOMER files, here only the resulting HTML files for the de novo search are made available. More information on the ranked matches to known TF motifs can be found in the respective tab of the Metadata_Rica_et_al.xlsx file.
+
+Output files: </p>
+* TprogWT_homerResults.html
+* TprogKO_homerResults.html
+* nonTprogWT_homerResults.html
+* nonTprogKO_homerResults.html
+
 ## Integration of scRNA-Seq and ATAC-Seq Analysis
 <p align="justify">
 R script to integrate the ATAC-Seq data with the scRNA-Seq data by calculating module scores of the significant DARs of interest and projecting them on the UMAPs. Requires the Seurat object generated in the script 05_scRNAseq_Clustering_characterization.R as well as the files dfATAC_Texprog_significantDARs.csv and dfATAC_nonTexprog_significantDARs.csv generated in the script 02_ATACseq_DifferentiallyAccessibleRegions.R as input. Outputs the expression of the calculated module scores of the significant DARs in each cell on the clustering (UMAP) of the scRNA-Seq analysis. Also outputs violin plots showing the module score distributions in each cluster and a table with corresponding statistics results.
