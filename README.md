@@ -17,7 +17,7 @@ Raw sequencing output was processed to count-feature-barcode matrices as describ
 
 Large parts of the scripts are based on the tutorials provided by the Satija lab and the tutorial from HBC training: </p>
 * https://satijalab.org/seurat/articles/pbmc3k_tutorial.html
-* https://hbctraining.github.io/scRNA-seq_online/schedule/links-to-lessons.html
+* https://github.com/hbctraining/Intro-to-scRNAseq/blob/master/schedule/links-to-lessons.md
 
 #### 01_scRNAseq_QC_cells.R
 <p align="justify">
