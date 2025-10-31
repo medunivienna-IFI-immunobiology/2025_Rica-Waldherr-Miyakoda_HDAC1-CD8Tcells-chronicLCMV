@@ -219,7 +219,7 @@ Raw sequencing output was processed to coverage and peak files as described in t
 * **04_run_BAMsort.sh** → sort by coordinates for further usage
 * **05_run_picardAddRG.sh** → add @RG information since this is needed for Picard MarkDuplicates
 * **06_run_picardMarkDup.sh** → mark duplicates in all files
-* **07_run_picardRmDup.sh** → remove duplicates from control groups (IgG and HDAC1-cKO)
+* **07_run_picardRmDup.sh** → remove duplicates from control groups (IgG in general and HDAC1-cKO for targeting HDAC1)
 * **08_CutAndRun_DuplicationRate.R** → plot distribution of duplication rates for all groups as quality control; input: TXT files from Picard summary; output: PicardDuplication.pdf
 * **09_run_FragmentLen.sh** → get fragment lengths; output: TXT files with fragment lengths
 * **10_CutAndRun_FragmenthLength.R** → plot fragment length distributions for all groups as quality control; input: TXT files with fragment lengths, output: FragmentLength<Target>.pdf, FragmentLengthViolinPlots.pdf
