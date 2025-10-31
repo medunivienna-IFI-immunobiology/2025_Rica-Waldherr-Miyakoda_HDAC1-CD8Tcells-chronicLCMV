@@ -206,7 +206,7 @@ Output files: </p>
 
 ## CUT&RUN Analysis
 <p align="justify">
-Raw sequencing output was processed to coverage and peak files as described in the methods section of the publication. We provide here all scripts used according to following workflow as well as important output concerning quality control to ensure reproducibility.
+Raw sequencing output was processed to coverage and peak files as described in the methods section of the publication. We provide here all scripts used according to following workflow as well as important output concerning quality control to ensure reproducibility. Output like plots or TXT files can be found in the respective metadata folders.
 
 The complete workflow:
 
