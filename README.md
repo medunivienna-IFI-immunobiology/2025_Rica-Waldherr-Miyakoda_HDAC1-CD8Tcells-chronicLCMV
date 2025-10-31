@@ -206,10 +206,21 @@ Output files: </p>
 
 ## CUT&RUN Analysis
 <p align="justify">
-Raw sequencing output was processed to coverage and peak files as described in the methods section of the publication. Here only the subsequently used scripts for quality control and analysis are described and made available.
+Raw sequencing output was processed to coverage and peak files as described in the methods section of the publication. We provide here all scripts used according to following workflow as well as important output concerning quality control to ensure reproducibility.
 
 The complete workflow:
 
 ![Alt text](./CnR_Workflow.png)
 
+#### Scripts:
+* 01_run_fastp.sh -> filtering of raw reads; MultiQC reports of raw and filtered data is provided in metadata folder
+* 02_run_bowtie2.sh -> alignment to mm10 genome
+* 03_run_RmBlacklist.sh -> removal of blacklisted regions known to give artifical signals; input: BAM files and mm10-blacklist.v2.bed
+* 04_run_BAMsort.sh -> sort by coordinates for further usage
+* 05_run_picardAddRG.sh -> add @RG information since this is needed for Picard MarkDuplicates
+* 06_run_picardMarkDup.sh -> mark duplicates in all files
+* 07_run_picardRmDup.sh -> remove duplicates from control groups (IgG and HDAC1-cKO)
+* 08_CutAndRun_DuplicationRate.R -> plot distribution of duplication rates for all groups as quality control; input: TXT files from Picard summary; output: PicardDuplication.pdf
+* 09_run_FragmentLen.sh -> get fragment lengths; output: TXT files with fragment lengths
+* 10_CutAndRun_FragmenthLength.R -> plot fragment length distributions for all groups as quality control; input: TXT files with fragment lengths, output: FragmentLength<Target>.pdf, FragmentLengthViolinPlots.pdf
 
