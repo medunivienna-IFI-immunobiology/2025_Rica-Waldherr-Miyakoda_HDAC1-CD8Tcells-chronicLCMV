@@ -1,0 +1,4 @@
+# code used to run SEACR
+# IgG as background controls
+
+bash SEACR_1.3.sh [samplepath][sample].merged.sorted.bedgraph [controlpath]IgG.merged.sorted.bedgraph norm stringent [basename] 
