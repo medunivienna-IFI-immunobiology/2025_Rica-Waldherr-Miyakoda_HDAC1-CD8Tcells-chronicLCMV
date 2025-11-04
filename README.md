@@ -236,3 +236,5 @@ Raw sequencing output was processed to coverage and peak files as described in t
 <pre> # code used to run SEACR
   bash SEACR_1.3.sh [samplepath][sample].merged.sorted.bedgraph [controlpath]IgG.merged.sorted.bedgraph norm stringent [basename] </pre>
 
+Output files: stringent.bed files containing locations of called peaks against IgG background
+
