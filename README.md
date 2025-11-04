@@ -227,4 +227,5 @@ Raw sequencing output was processed to coverage and peak files as described in t
 * **12_run_BAMsortCoord.sh** → sort reads by coordinates (necessary for certain tools used further down the workflow)
 * **13_run_BAMtoBED.sh** → convert mapped and sorted BAM files to BED files, additional output: clean BED file with only read pairs on same chromosome and fragment length > 1000, and BED file containing only fragment related columns
 * **14_run_FragmentBins.sh** → infer to which bin a fragment belongs (midpoint of fragment is used) for further QC; input: fragments.bed files output by 13_run_BAMtoBED.sh, output: fragmentsCount.bin500.bed
+* **15_CutAndRun_ReplReproducibility.R** → QC checking replicate reproducibility; input: fragmentsCount.bin500.bed files from 14_run_FragmentBins.sh, output: ReplicateReproducibility.pdf for all 4 groups
 
