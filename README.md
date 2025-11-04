@@ -230,4 +230,5 @@ Raw sequencing output was processed to coverage and peak files as described in t
 * **15_CutAndRun_ReplReproducibility.R** → QC checking replicate reproducibility; input: fragmentsCount.bin500.bed files from 14_run_FragmentBins.sh, output: ReplicateReproducibility.pdf for all 4 groups
 * **16_run_mergeBAM.sh** → merge replicates to one BAM file for peak calling
 * **17_run_BAMsortCoordIndex.sh** → sort merged files by coordinates and create index files as preparation for deeptools bamCoverage
+* **18_run_bamCoverage.sh** → create BEDGRAPH files for later usage with SEACR, and BIGWIG files normalized with RPKM for visualization in the IGV browser
 
