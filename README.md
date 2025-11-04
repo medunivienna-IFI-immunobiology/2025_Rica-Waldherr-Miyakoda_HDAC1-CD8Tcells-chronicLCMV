@@ -212,7 +212,7 @@ Raw sequencing output was processed to coverage and peak files as described in t
 
 ![Alt text](./CnR_Workflow.png)
 
-#### Scripts:
+#### Scripts preparing data for peak calling:
 * **01_run_fastp.sh** → filtering of raw reads; MultiQC reports of raw and filtered data is provided in metadata folder
 * **02_run_bowtie2.sh** → alignment to mm10 genome
 * **03_run_RmBlacklist.sh** → removal of blacklisted regions known to give artifical signals; input: BAM files and mm10-blacklist.v2.bed
@@ -231,4 +231,8 @@ Raw sequencing output was processed to coverage and peak files as described in t
 * **16_run_mergeBAM.sh** → merge replicates to one BAM file for peak calling
 * **17_run_BAMsortCoordIndex.sh** → sort merged files by coordinates and create index files as preparation for deeptools bamCoverage
 * **18_run_bamCoverage.sh** → create BEDGRAPH files for later usage with SEACR, and BIGWIG files normalized with RPKM for visualization in the IGV browser
+
+#### Peak calling with SEACR for H3K27ac and H3K27me3:
+<pre> # code used to run SEACR
+  bash SEACR_1.3.sh [samplepath][sample].merged.sorted.bedgraph [controlpath]IgG.merged.sorted.bedgraph norm stringent [basename] </pre>
 
