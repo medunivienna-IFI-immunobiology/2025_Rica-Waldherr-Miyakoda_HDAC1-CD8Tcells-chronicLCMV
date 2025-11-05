@@ -1,0 +1,7 @@
+# title: run Homer to find enriched transcription factor motifs in regions which showed RUNX3 binding
+# author: Monika Waldherr
+# input: narrowPeak files output by MACS3 containing regions of interest
+
+# commands to run for the 4 different groups
+findMotifsGenome.pl Ly108--T-WT-RUNX3-keepdup-maxgap-minlen_peaks.narrowPeak mm10 TprogRUNXWTallOutput -size given -p 30
+findMotifsGenome.pl Ly108--T-HDAC1-KO-RUNX3-keepdup-maxgap-minlen_peaks.narrowPeak mm10 TprogRUNXKOallOutput -size given -p 30
