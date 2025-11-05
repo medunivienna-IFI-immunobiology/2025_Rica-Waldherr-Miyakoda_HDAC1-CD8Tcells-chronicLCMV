@@ -1,0 +1,4 @@
+# code used to run MACS3
+# IgG as bachground controls for RUNX3, HDAC1-cKO as background controls for HDAC1
+
+macs3 callpeak -t [sample].merged.sorted.bam -c [sample]-[IgG or KO-HDAC1].merged.sorted.bam -g mm -f BAMPE --keep-dup all --max-gap 250 --min-length 250 --outdir ./results/macs3callpeak -n [basename] 
