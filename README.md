@@ -180,9 +180,9 @@ Output files: </p>
 * TtermWTopenCons.bed
 * TtermKOopenCons.bed
 
-#### 05_ATACseq_TFmotifs_RunHomer.sh
+#### 05_ATACseq_TFmotifs_RunHomer.txt
 <p align="justify">
-Script contains commands to run from HOMER for finding enriched motifs in genomic regions of DARs. Requires consensus.bed of DARs from script 04_ATACseq_TFmotifs_GetConsensusBedFilesOfInterest.R as input. Outputs standard HOMER files, here only the resulting HTML files for the de novo search are made available. More information on the ranked matches to known TF motifs can be found in the respective tab of the Metadata_Rica_et_al.xlsx file.
+File contains commands to run from HOMER for finding enriched motifs in genomic regions of DARs. Requires consensus.bed of DARs from script 04_ATACseq_TFmotifs_GetConsensusBedFilesOfInterest.R as input. Outputs standard HOMER files, here only the resulting HTML files for the de novo search are made available. More information on the ranked matches to known TF motifs can be found in the respective tab of the Metadata_Rica_et_al.xlsx file.
 
 Output files: </p>
 * TprogWT_homerResults.html
@@ -243,4 +243,7 @@ Output files: stringent.bed files containing locations of called peaks against I
   macs3 callpeak -t [sample].merged.sorted.bam -c [sample]-[IgG or KO-HDAC1].merged.sorted.bam -g mm -f BAMPE --keep-dup all --max-gap 250 --min-length 250 --outdir ./results/macs3callpeak -n [basename] </pre>
 
 Output files: narrowPeak files containing locations of called peaks (submitted to GEO)
+
+#### Scripts for analysis of peaks
+* **21_CnR_RUNX3-TFmotifs_RunHomer.txt** → commands used to find enriched TF motifs in regions of TexProg where RUNX3 binding was detected (QC of CnR); input: narrowPeak files from MACS3, output: homerResults.html files for WT and KO
 
