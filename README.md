@@ -236,5 +236,11 @@ Raw sequencing output was processed to coverage and peak files as described in t
 <pre> # code used to run SEACR
   bash SEACR_1.3.sh [samplepath][sample].merged.sorted.bedgraph [controlpath]IgG.merged.sorted.bedgraph norm stringent [basename] </pre>
 
-Output files: stringent.bed files containing locations of called peaks against IgG background
+Output files: stringent.bed files containing locations of called peaks against IgG background (submitted to GEO)
+
+#### Peak calling with MACS3 for RUNX3 with IgG as control and for HDAC1 with HDAC1-cKO as control:
+<pre> # code used to run MACS3
+  callpeak -t [sample].merged.sorted.bam -c [sample]-[IgG or KO-HDAC1].merged.sorted.bam -g mm -f BAMPE --keep-dup all --max-gap 250 --min-length 250 --outdir ./results/macs3callpeak -n [sample] </pre>
+
+Output files: narrowPeak files containing locations of called peaks (submitted to GEO)
 
