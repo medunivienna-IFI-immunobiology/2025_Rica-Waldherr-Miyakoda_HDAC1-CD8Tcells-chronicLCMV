@@ -1,0 +1,11 @@
+# title: Cut&Run analysis - visualization of Hdac1, Runx3, H3K27ac, H3K27me3 enrichment around Hdac1 binding sites
+# author: Monika Waldherr
+# input: narrowPeak file of HDAC1 binding in WT, BigWig files of HDAC1, RUNX3, H3K27ac and H3K27me3 (WT and HDAC1-cKO)
+
+# deeptools commands used for TexProg and nonTexProg
+
+# get matrix
+computeMatrix reference-point --referencePoint center -b 5000 -a 5000 -R [WT-HDAC1].narrowPeak -S [WT-HDAC1]rpkm.BigWig [KO-HDAC1]rpkm.BigWig [WT-RUNX3]rpkm.BigWig [KO-RUNX3]rpkm.BigWig [WT-H3K27ac]rpkm.BigWig [KO-H3K27ac]rpkm.BigWig [WT-H3K27me3]rpkm.BigWig [KO-H3K27me3]rpkm.BigWig --skipZeros -o [sample]_matrix_gene.mat.gz -p 30 --samplesLabel WT-HDAC1 KO-HDAC1 WT-RUNX3 KO-RUNX3 WT-H3K27ac KO-H3K27ac WT-H3K27me3 KO-H3K27me3 --smartLabels &
+
+# plot heatmap
+plotHeatmap -m [sample]_matrix_gene.mat.gz -out [sample]_heatmap.pdf --sortUsing sum --labelRotation 45 --colorMap inferno inferno Greens Greens Oranges Oranges Blues Blues --zMax 20 20 40 40 30 30 20 20 --yMax 20 20 40 40 30 30 20 20 &
