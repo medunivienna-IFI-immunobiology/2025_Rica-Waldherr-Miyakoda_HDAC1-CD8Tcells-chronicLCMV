@@ -244,6 +244,13 @@ Output files: stringent.bed files containing locations of called peaks against I
 
 Output files: narrowPeak files containing locations of called peaks (submitted to GEO)
 
-#### Scripts for analysis of peaks
+#### Scripts for analysis of peaks (output can be found in corrresponding metadata folders)
 * **21_CnR_RUNX3-TFmotifs_RunHomer.txt** → commands used to find enriched TF motifs in regions of TexProg where RUNX3 binding was detected (QC of CnR); input: narrowPeak files from MACS3, output: homerResults.html files for WT and KO
+* **22_CnR_DiffBind_H3K27ac.R** → differential peak analysis with DiffBind; output: report.tab for H3K27ac
+* **23_CnR_DiffBind_H3K27me3.R** → differential peak analysis with DiffBind; output: report.tab for H3K27me3
+* **24_CnR_DiffBind_RUNX3.R** → differential peak analysis with DiffBind; output: report.tab for Runx3
+* **25_CnR_VolcanoPlotsGainLossAcMe.R** → visualization as volcano plots of gain and loss of H3K27ac and H3K27me3 upon loss of HDAC1
+* **26_CnR_EnrichmentHDAC1BindingSites.txt** → visualization of Hdac1, Runx3, H3K27ac, H3K27me3 enrichment around Hdac1 binding sites
+* **27_CnR_IntersectionPies.R** → visualization of Hdac1 and Runx3 binding overlapping with more open DARs as pie charts
+* **28_CnR_EnrichmentH3K27acDARs.txt** → visualization of Hdac1, Runx3, H3K27ac, H3K27me3 enrichment at DARs in early-TexProg
 
